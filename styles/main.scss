@@ -1,0 +1,175 @@
+@import 'reset';
+@import 'fonts';
+
+%flex-container {
+  display: flex;
+}
+
+%f-normal {
+	font-weight: 400;
+	letter-spacing: 5.5%;
+}
+
+%f-thin {
+	font-weight: 100;
+	letter-spacing: 5.5%;
+}
+
+body {
+  width: 100vw;
+	background: #DBEEEE;
+	font-family: 'SF Compact Display', sans-serif;
+}
+
+header {
+	@extend %flex-container;
+	justify-content: space-between;
+
+	height: 75px;
+
+	.logo {
+		width: 219px;
+		height: 45px;
+		margin: 30px 0 0 30px;
+	}
+
+	nav {
+		@extend %flex-container;
+
+		margin: 27px 0 20px 0;
+
+		a {
+			@extend %f-normal;
+			margin-left: 32px;
+			margin-right: 32px;
+
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 21px;
+			line-height: 28.11px;
+			color: #3D9090;
+		}
+	}
+}
+
+main {
+	@extend %flex-container;
+
+	.description-side {
+		@extend %f-thin;
+		@extend %flex-container;
+
+		flex-direction: column;
+		justify-content: start;
+
+		width: 45%;
+
+		.introduction-text {
+			@extend %flex-container;
+
+			flex-direction: column;
+			width: 599px;
+			height: 292px;
+			margin: 80px 0 0 30px;
+			font-size: 24px;
+			line-height: 32.12px;
+
+			p {
+				margin: 10px 10px;
+			}
+		}
+
+    .dividing-line {
+    	width:  100%;
+    	border-bottom: 1px solid #C4C4C4;
+    	margin-top: 70px;
+    }
+
+    .specification-container {
+    	@extend %flex-container;
+
+    	justify-content: space-between;
+
+    	.ellipse {
+    		position: absolute;
+    		z-index: 1;
+    		display: block;
+    		margin-top: 28px;
+    	}
+
+    	.specifications {
+    		position: relative;
+    		z-index: 2;
+    		max-width: 328px;
+    		margin-top: 160px;
+    		margin-left: 40px;
+
+    		p {
+    			line-height: 2.5;
+    		}
+
+    		.feature-name {
+    			@extend %f-normal;
+    		}
+    	}
+
+    	.lamp-picture-container {
+    		position: relative;
+    		z-index: 2;
+    		width: 158px;
+    		height: 580px;
+    	}
+
+    	.items-switcher {
+    		@extend %flex-container;
+
+    		flex-direction: column;
+    		justify-content: space-between;
+    		align-items: center;
+
+    		width: 178px;
+    		height: 554px;
+    		margin-top: 40px;
+    		border-radius: 20px;
+
+    		.item {
+    			width: 132px;
+    			height: 130px;
+    			margin: 10px 28px 10px 16px;
+    			border: thin dashed;
+    			text-align: center;
+
+    			img {
+    				height: inherit;
+    			}
+    		}
+    	}
+
+    	.filled-switcher {
+  			background: #BDDDDD;
+  		}
+    }
+	}
+
+	.presentation-side {
+		padding: 8px 30.2px 28px 0;
+
+		.room-background {
+			position: absolute;
+			right: 30px;
+			z-index: 1;
+		}
+
+		.lamp-presentation-container {
+			position: relative;
+			z-index: 2;
+			width: 98px;
+			height: 360px;
+			margin-left: 218px;
+
+			img {
+				height: inherit;
+			}
+		}
+	}
+}
