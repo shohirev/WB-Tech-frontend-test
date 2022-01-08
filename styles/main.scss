@@ -1,5 +1,6 @@
 @import 'reset';
 @import 'fonts';
+@import 'media';
 
 %flex-container {
   display: flex;
@@ -91,14 +92,14 @@ main {
     	justify-content: space-between;
 
     	.ellipse {
-    		position: absolute;
+    	  position: absolute;
     		z-index: 1;
     		display: block;
     		margin-top: 28px;
     	}
 
     	.specifications {
-    		position: relative;
+    		
     		z-index: 2;
     		max-width: 328px;
     		margin-top: 160px;
@@ -114,7 +115,7 @@ main {
     	}
 
     	.lamp-picture-container {
-    		position: relative;
+    		
     		z-index: 2;
     		width: 158px;
     		height: 580px;

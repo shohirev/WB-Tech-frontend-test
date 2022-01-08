@@ -8,6 +8,7 @@ const getItemsData = async () => {
 };
 
 const app = async () => {
+	alert(document.documentElement.clientWidth)
 	const switcher = document.querySelector('.items-switcher');
 	switcher.classList.toggle('empty-switcher');
 	switcher.classList.toggle('filled-switcher');
