@@ -13,7 +13,7 @@ const renderLoader = (state) => {
 };
 
 const renderLampInfo = (state) => {
-	const activeItem = state.items.find((item) => item.id === state.activeItemId);
+  const activeItem = state.items.find((item) => item.id === state.activeItemId);
 
   const material = document.querySelector('.feature-material');
   material.textContent = activeItem.material;
@@ -25,20 +25,19 @@ const renderLampInfo = (state) => {
   const electrification = document.querySelector('.feature-electrification');
   electrification.textContent = activeItem.electrification;
 
-	const currentLampImage = document.createElement('img');
-	currentLampImage.setAttribute('src', activeItem.image);
-	currentLampImage.setAttribute('alt', 'selected lamp image');
+  const currentLampImage = document.createElement('img');
+  currentLampImage.setAttribute('src', activeItem.image);
+  currentLampImage.setAttribute('alt', 'selected lamp image');
 
-	const lampImageContainer = document.querySelector('.lamp-picture-container');
-	const lampInRoomContainer = document.querySelector('.lamp-presentation-container');
-
-	if (!lampImageContainer.firstElementChild) {
-		lampImageContainer.append(currentLampImage);
-		lampInRoomContainer.append(currentLampImage.cloneNode());
-	} else {
-		lampImageContainer.firstElementChild.replaceWith(currentLampImage);
-		lampInRoomContainer.firstElementChild.replaceWith(currentLampImage.cloneNode());
-	}
+  const lampImageContainer = document.querySelector('.lamp-picture-container');
+  const lampInRoomContainer = document.querySelector('.lamp-presentation-container');
+  if (!lampImageContainer.firstElementChild) {
+    lampImageContainer.append(currentLampImage);
+    lampInRoomContainer.append(currentLampImage.cloneNode());
+  } else {
+    lampImageContainer.firstElementChild.replaceWith(currentLampImage);
+    lampInRoomContainer.firstElementChild.replaceWith(currentLampImage.cloneNode());
+  }
 
   const themeSwitcher = document.querySelector('.theme-switcher');
   const lightThemeSwitcher = document.querySelector('.light');

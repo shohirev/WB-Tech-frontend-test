@@ -3,24 +3,24 @@ import {renderLoader, renderLampInfo, renderMode} from './renders.js';
 import getItemsDatabase from './databaseLoader.js';
 
 const app = async () => {
-	const state = {
-		items: null,
-		activeItemId: 1,
-		theme: 'light',
+  const state = {
+    items: null,
+    activeItemId: 1,
+    theme: 'light',
     loadingProcess: null,
-	};
+  };
 
-	const watchedState = onChange(state, (path, value) => {
+  const watchedState = onChange(state, (path, value) => {
     if (path === 'loadingProcess') {
       renderLoader(watchedState);
     }
-		if (path === 'activeItemId') {
-			renderLampInfo(watchedState);
-		}
-		if (path === 'theme') {
+    if (path === 'activeItemId') {
+      renderLampInfo(watchedState);
+    }
+    if (path === 'theme') {
       renderMode(value);
-		}
-	});
+    }
+  });
 
   await getItemsDatabase(watchedState);
 
@@ -47,7 +47,7 @@ const app = async () => {
     };
   });
 
-	renderLampInfo(watchedState);
+  renderLampInfo(watchedState);
 };
 
 export default app;
