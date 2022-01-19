@@ -1,15 +1,8 @@
-# 🚀 Welcome to your new awesome project!
+This is a trainee project for testing basic skills in frontend-development
 
-This project has been created using **webpack-cli**, you can now run
+https://wb-tech-frontend-test.vercel.app/
 
+Installation
 ```
-npm run build
+make build
 ```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
