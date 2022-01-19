@@ -9,14 +9,137 @@
     margin: 0 auto;
   }
 
+  .description-side {
+    width: 45%;
+  }
+
   .presentation-side {
     position: relative;
     width: 55%;
   }
 }
 
-@media (min-width: 900px) and (max-width: 1600px) {
-  .room-background {
-    width: 55vw;
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .description-side {
+    max-width: 45%;
+  }
+
+  .presentation-side {
+    position: relative;
+    width: 55%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 1199px) {
+  header {
+    nav {
+      .menu {
+        display: block;
+      }
+    }
+  }
+
+  main {
+    .description-side {
+      width: 100%;
+
+      .introduction-text {
+        width: 80%;
+        margin: 80px auto 0 auto;
+        font-size: 28px;
+        text-align: justify;
+      }
+
+      .dividing-line {
+        margin-top: 0;
+      }
+
+      .specification-container {
+        .specifications {
+          margin-top: 80px;
+
+          p {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .presentation-side {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  header {
+    height: auto;
+    margin-bottom: 0;
+
+    nav {
+      .burger-menu {
+        display: block;
+
+        .burger-button {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+        }
+
+        .menu {
+          position: fixed;
+          top: 60px;
+          right: 32px;
+          display: block;
+          visibility: hidden;
+
+          a {
+            display: block;
+          }
+        }
+
+        input[name="burger-menu-button"]:checked ~ .menu {
+          visibility: visible;
+          background: white;
+        }
+      }
+
+      .menu {
+        display: none;
+      }
+    }
+  }
+
+  main {
+    min-width: 550px;
+
+    .description-side {
+      justify-content: space-between;
+
+      .introduction-text {
+        height: auto;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  main {
+    .description-side {
+      .introduction-text {
+        font-size: 16px;
+      }
+
+      .specification-container {
+        flex-wrap: wrap;
+
+        .panel-wrapper {
+          width: 100%;
+        }
+      }
+    }
   }
 }

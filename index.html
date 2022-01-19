@@ -6,59 +6,90 @@
     <title>My WB-Tech test project</title>
   </head>
   <body>
-      <header>
-        <img src="images/logo.svg" alt="logotype" class="logo">
-        <nav>
+    <div class="loader-wrapper"></div>
+    <header>
+      <img src="images/logo.svg" alt="logotype" class="logo">
+      <nav>
+        <div class="burger-menu">
+          <input id="burger-menu-button" type="checkbox" name="burger-menu-button"/>
+          <label for="burger-menu-button">
+            <img src="images/burger-menu.svg" class=burger-button>
+          </label>
+          <div class="menu">
+            <a>collections</a>
+            <a>blog</a>
+            <a>about</a>
+            <a>contacts</a>
+          </div>
+        </div>
+        <div class="menu">
           <a>collections</a>
           <a>blog</a>
           <a>about</a>
           <a>contacts</a>
-        </nav>
-      </header>
-      <main>
-        <div class="description-side">
-          <div class="introduction-text">
-            <p>
-              Collection of lighting is inspired by the geometric works of the great Suprematist artists Kissitzky and Kazimir Malevich. 
-            </p>
-            <p>
-              Suprematism is a modernist movement in the art of the early twentieth century, focused on the basic geometric forms, such as circles, squares, lines and rectangles. The geometric structure of the lamps will always look like a small art objects in your house.
-            </p>
         </div>
-        <div class="dividing-line"></div>
-        <div class="specification-container">
-          <svg xmlns="http://www.w3.org/2000/svg" width="405" height="451" viewBox="0 0 405 451" fill="none" class="ellipse">
-            <ellipse rx="231.083" ry="225.233" transform="matrix(1 0 0 -1 174.13 225.233)" fill="#E4D7B9"/>
-          </svg>
-          <div class="specifications">
-            <p>
-              <span class="feature-name">Material:</span>
-              <span class="feature-material"></span>
-            </p>
-            <p>
-              <span class="feature-name">Dimensions (cm):</span>
-              <span class="feature-dimensions"></span>
-            </p>
-            <p>
-              <span class="feature-name">Net Weight:</span>
-              <span class="feature-weight"></span>
-            </p>
-            <p>
-              <span class="feature-name">Electrification:</span>
-              <span class="feature-electrification"></span>
-            </p>
-          </div>
+      </nav>
+    </header>
+    <main>
+      <div class="description-side">
+        <div class="introduction-text">
+          <p>
+            Collection of lighting is inspired by the geometric works of the great Suprematist artists Kissitzky and Kazimir Malevich. 
+          </p>
+          <p>
+            Suprematism is a modernist movement in the art of the early twentieth century, focused on the basic geometric forms, such as circles, squares, lines and rectangles. The geometric structure of the lamps will always look like a small art objects in your house.
+          </p>
+      </div>
+      <div class="dividing-line"></div>
+      <div class="specification-container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="405" height="451" viewBox="0 0 405 451" fill="none" class="ellipse">
+          <ellipse rx="231.083" ry="225.233" transform="matrix(1 0 0 -1 174.13 225.233)" fill="#E4D7B9"/>
+        </svg>
+        <div class="specifications">
+          <p>
+            <span class="feature-name">Material:</span>
+            <span class="feature-material"></span>
+          </p>
+          <p>
+            <span class="feature-name">Dimensions (cm):</span><br>
+            <span class="feature-dimensions"></span>
+          </p>
+          <p>
+            <span class="feature-name">Net Weight:</span>
+            <span class="feature-weight"></span>
+          </p>
+          <p>
+            <span class="feature-name">Electrification:</span><br>
+            <span class="feature-electrification"></span>
+          </p>
+        </div>
+        <div class="panel-wrapper">
           <div class="lamp-picture-container"></div>
-          <div class="items-switcher empty-switcher"></div>
+          <div class="panel">
+            <div class="switchers"></div>
+            <div class="theme-switcher">
+              <div class='light'>
+                <img src="./images/light-theme.svg" alt="sun-picture">
+              </div>
+              <div class="dark">
+                <img src="./images/dark-theme.svg" alt="moon-picture">
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-        <div class="presentation-side">
-          <picture class="room-background">
-            <source type="image/webp" srcset="images/room-background.webp 1x, images/room-background@2x.webp 2x">
-            <img src="images/room-background.png" srcset="images/room-background@2x.png 2x" alt="room background">
-          </picture>
-          <div class="lamp-presentation-container"></div>
-        </div>
-      </main>
-    </body>
+      </div>
+      </div>
+      <div class="presentation-side">
+        <picture class="room-background light-theme">
+          <source type="image/webp" srcset="images/room-background.webp 1x, images/room-background@2x.webp 2x">
+          <img src="images/room-background.png" srcset="images/room-background@2x.png 2x" alt="room background">
+        </picture>
+        <picture class="room-background dark-theme">
+          <source type="image/webp" srcset="images/room-background-dark-theme.webp 1x, images/room-background-dark-theme@2x.webp 2x">
+          <img src="images/room-background-dark-theme.png" srcset="images/room-background-dark-theme@2x.png 2x" alt="room background">
+        </picture>
+        <div class="lamp-presentation-container"></div>
+      </div>
+    </main>
+  </body>
 </html>

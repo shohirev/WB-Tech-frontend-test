@@ -1,39 +1,53 @@
-import axios from 'axios';
-
-const getItemsData = async () => {
-	const response = await axios.get('https://private-anon-76207985fb-lampshop.apiary-mock.com/lamps');
-	console.log(response)
-	const url = response.data[1].image;
-	return url; //first picture url
-};
+import onChange from 'on-change';
+import {renderLoader, renderLampInfo, renderMode} from './renders.js';
+import getItemsDatabase from './databaseLoader.js';
 
 const app = async () => {
-	alert(document.documentElement.clientWidth)
-	const switcher = document.querySelector('.items-switcher');
-	switcher.classList.toggle('empty-switcher');
-	switcher.classList.toggle('filled-switcher');
+	const state = {
+		items: null,
+		activeItemId: 1,
+		theme: 'light',
+    loadingProcess: null,
+	};
 
-	for (let i = 0; i < 3; i += 1) {
-		const item = document.createElement('div');
-		item.classList.add('item');
-		switcher.append(item);
-	}
+	const watchedState = onChange(state, (path, value) => {
+    if (path === 'loadingProcess') {
+      renderLoader(watchedState);
+    }
+		if (path === 'activeItemId') {
+			renderLampInfo(watchedState);
+		}
+		if (path === 'theme') {
+      renderMode(value);
+		}
+	});
 
-	const imageUrl = await getItemsData();
+  await getItemsDatabase(watchedState);
 
-	const lampImage = document.createElement('img');
-	lampImage.setAttribute('src', imageUrl);
-	lampImage.setAttribute('alt', 'lamp image');
+  const switchers = document.querySelector('.switchers');
 
-	const lampMainContainer = document.querySelector('.lamp-picture-container');
-	lampMainContainer.append(lampImage);
+  watchedState.items.forEach((item) => {
+    const switcher = document.createElement('div');
+    switcher.classList.add('lamp-switcher');
+    if (item.id === watchedState.activeItemId) {
+      switcher.classList.add('active-lamp-switcher');
+    }
+    switchers.append(switcher);
 
-	const lampRightContainer = document.querySelector('.lamp-presentation-container');
-	lampRightContainer.append(lampImage.cloneNode());
+    const lampImage = document.createElement('img');
+    lampImage.setAttribute('src', item.image);
+    lampImage.setAttribute('alt', 'lamp image');
+    switcher.append(lampImage);
 
-	const lampSwitcherItem = document.querySelector('.items-switcher .item');
-	lampSwitcherItem.append(lampImage.cloneNode());
-	
+    switcher.onclick = () => {
+      const previousActiveSwitcher = document.querySelector('.active-lamp-switcher');
+      previousActiveSwitcher.classList.remove('active-lamp-switcher');
+      switcher.classList.add('active-lamp-switcher');
+      watchedState.activeItemId = item.id;
+    };
+  });
+
+	renderLampInfo(watchedState);
 };
 
 export default app;
