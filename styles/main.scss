@@ -1,246 +1,246 @@
-@import 'reset';
-@import 'fonts';
-@import 'loader';
+@import "reset";
+@import "fonts";
+@import "loader";
 
 %flex-container {
   display: flex;
 }
 
 %f-normal {
-	font-weight: 400;
-	letter-spacing: 5.5%;
+  font-weight: 400;
+  letter-spacing: 5.5%;
 }
 
 %f-thin {
-	font-weight: 100;
-	letter-spacing: 5.5%;
+  font-weight: 100;
+  letter-spacing: 5.5%;
 }
 
 .disabled-button {
-	opacity: 0.5;
+  opacity: 0.5;
 }
 
 body {
   height: 100vh;
-	background: #DBEEEE;
-	font-family: 'SF Compact Display', sans-serif;
+  background: #dbeeee;
+  font-family: "SF Compact Display", sans-serif;
 }
 
 header {
-	@extend %flex-container;
-	justify-content: space-between;
-	margin-bottom: 10px;
-	height: 76px;
+  @extend %flex-container;
 
-	.logo {
-		width: 219px;
-		height: 45px;
-		margin: 30px 0 0 30px;
-	}
+  justify-content: space-between;
+  margin-bottom: 10px;
+  height: 76px;
 
-	nav {
-		@extend %flex-container;
+  .logo {
+    width: 219px;
+    height: 45px;
+    margin: 30px 0 0 30px;
+  }
 
-		margin: 27px 0 20px 0;
+  nav {
+    @extend %flex-container;
 
-		.burger-menu {
-			flex-direction: column;
-		  display: none;
+    margin: 27px 0 20px;
 
-		  img {
-		  	display: block;
-		  	margin: 0 auto;
-		  }
+    .burger-menu {
+      flex-direction: column;
+      display: none;
 
-		  .menu {
-		  	@extend %flex-container;
-		  }
-		}
+      img {
+        display: block;
+        margin: 0 auto;
+      }
 
-		a {
-			@extend %f-normal;
-			margin-left: 32px;
-			margin-right: 32px;
+      .menu {
+        @extend %flex-container;
+      }
+    }
 
-			text-transform: uppercase;
-			font-weight: 400;
-			font-size: 21px;
-			line-height: 28.11px;
-			color: #3D9090;
-		}
-	}
+    a {
+      @extend %f-normal;
+
+      margin-left: 32px;
+      margin-right: 32px;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: 21px;
+      line-height: 28.11px;
+      color: #3d9090;
+    }
+  }
 }
 
 main {
-	@extend %flex-container;
+  @extend %flex-container;
 
-	.description-side {
-		@extend %f-thin;
-		@extend %flex-container;
+  .description-side {
+    @extend %f-thin;
+    @extend %flex-container;
 
-		flex-direction: column;
-		justify-content: start;
+    flex-direction: column;
+    justify-content: start;
 
-		.introduction-text {
-			@extend %flex-container;
+    .introduction-text {
+      @extend %flex-container;
 
-			flex-direction: column;
-			
-			height: 292px;
-			margin: 80px 0 0 30px;
-			font-size: 24px;
-			line-height: 1.3;
+      flex-direction: column;
+      height: 292px;
+      margin: 80px 0 0 30px;
+      font-size: 24px;
+      line-height: 1.3;
 
-			p {
-				margin: 10px 10px;
-			}
-		}
+      p {
+        margin: 10px;
+      }
+    }
 
     .dividing-line {
-    	width:  100%;
-    	border-bottom: 1px solid #C4C4C4;
-    	margin-top: 70px;
+      width: 100%;
+      border-bottom: 1px solid #c4c4c4;
+      margin-top: 70px;
     }
 
     .specification-container {
-    	@extend %flex-container;
+      @extend %flex-container;
 
-    	.ellipse {
-    	  position: absolute;
-    		z-index: 1;
-    		display: block;
-    		margin-top: 28px;
-    	}
+      .ellipse {
+        position: absolute;
+        z-index: 1;
+        display: block;
+        margin-top: 28px;
+      }
 
-    	.specifications {
-    		z-index: 2;
-    		width: 35%;
-    		margin-top: 160px;
-    		margin-left: 40px;
+      .specifications {
+        z-index: 2;
+        width: 35%;
+        margin-top: 160px;
+        margin-left: 40px;
 
-    		p {
-    			font-size: 16px;
-    			line-height: 2.5;
-    		}
+        p {
+          font-size: 16px;
+          line-height: 2.5;
+        }
 
-    		.feature-name {
-    			@extend %f-normal;
-    		}
-    	}
+        .feature-name {
+          @extend %f-normal;
+        }
+      }
 
-    	.panel-wrapper {
-    		@extend %flex-container;
+      .panel-wrapper {
+        @extend %flex-container;
 
-    		justify-content: space-between;
-    		width: 65%;
+        justify-content: space-between;
+        width: 65%;
 
-    		.lamp-picture-container {
-	    		z-index: 2;
-	    		max-width: 60%;
-	    		height: 580px;
+        .lamp-picture-container {
+          z-index: 2;
+          max-width: 60%;
+          height: 580px;
 
-	    		img {
-	    			max-width: 100%;
-	    		}
-	    	}
+          img {
+            max-width: 100%;
+          }
+        }
 
-	    	.panel {
-	    		width: 40%;
-	    		height: 554px;
-	    		margin-top: 40px;
-	    		border-radius: 20px;
-	    		background: #BDDDDD;
+        .panel {
+          width: 40%;
+          height: 554px;
+          margin-top: 40px;
+          border-radius: 20px;
+          background: #bddddd;
 
-	    		.switchers {
-		    		@extend %flex-container;
+          .switchers {
+            @extend %flex-container;
 
-		    		flex-direction: column;
-		    		justify-content: space-between;
-		    		align-items: center;
-		    		overflow-x: hidden;
-		    		overflow-y: auto;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 478px;
 
-		    		height: 478px;
+            .lamp-switcher {
+              width: 132px;
+              height: 130px;
+              margin: 10px 16px;
+              border-radius: 10px;
+              text-align: center;
 
-		    		.lamp-switcher {
-		    			width: 132px;
-		    			height: 130px;
-		    			margin: 10px 16px 10px 16px;
-		    			border-radius: 10px;
-		    			text-align: center;
+              img {
+                height: inherit;
+              }
+            }
 
-		    			img {
-		    				height: inherit;
-		    			}
-		    		}
+            .lamp-switcher:hover {
+              background: #dbeeee;
+            }
 
-	    			.lamp-switcher:hover {
-	    				background: #DBEEEE;
-	    			}
+            .active-lamp-switcher {
+              background: #dbeeee;
+            }
+          }
 
-		    		.active-lamp-switcher {
-		    			background: #DBEEEE;
-		    		}
-		    	}
+          .theme-switcher {
+            @extend %flex-container;
 
-		    	.theme-switcher {
-	    			@extend %flex-container;
+            width: 100%;
+            height: 76px;
 
-	    			width: 100%;
-	    			height: 76px;
+            div {
+              @extend %flex-container;
 
-	    			div {
-	    				@extend %flex-container;
-	    				justify-content: center;
-	    				align-items: center;
-							width: 50%;
-	    				height: 100%;
-	    			}
+              justify-content: center;
+              align-items: center;
+              width: 50%;
+              height: 100%;
+            }
 
-	    			.light {
-	    				background: #FFF3DA;
-	    				
-	    			}
+            .light {
+              background: #fff3da;
+            }
 
-	    			.dark {
-	    				background: #94A6A6;
-	    			}
-	    		}
-	    	}
-    	}
+            .dark {
+              background: #94a6a6;
+            }
+          }
+        }
+      }
     }
-	}
+  }
 
-	.presentation-side {
-		padding: 8px 30.2px 0 0;
+  .presentation-side {
+    padding: 8px 30.2px 0 0;
 
-		.room-background {
-			position: absolute;
-			left: 0;
-			right: 30px;
-			z-index: 1;
+    .room-background {
+      position: absolute;
+      left: 0;
+      right: 30px;
+      z-index: 1;
 
-			img {
-				border-radius: 20px;
-			}
-		}
+      img {
+        border-radius: 20px;
+      }
+    }
 
-		.dark-theme {
-			display: none;
-		}
+    .dark-theme {
+      display: none;
+    }
 
-		.lamp-presentation-container {
-			@extend %flex-container;
-			width: 98px;
-			height: 360px;
-			margin-left: 218px;
+    .lamp-presentation-container {
+      @extend %flex-container;
 
-			img {
-				z-index: 2;
-				height: inherit;
-			}
-		}
-	}
+      width: 98px;
+      height: 360px;
+      margin-left: 218px;
+
+      img {
+        z-index: 2;
+        height: inherit;
+      }
+    }
+  }
 }
 
-@import 'media';
+@import "media";
