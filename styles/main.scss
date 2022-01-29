@@ -39,30 +39,22 @@ header {
     margin: 30px 0 0 30px;
   }
 
-  nav {
+  .burger-nav-toggle {
+    display: none;
+  }
+
+  nav ul {
     @extend %flex-container;
 
     margin: 27px 0 20px;
 
-    .burger-menu {
-      flex-direction: column;
-      display: none;
-
-      img {
-        display: block;
-        margin: 0 auto;
-      }
-
-      .menu {
-        @extend %flex-container;
-      }
-    }
-
     a {
       @extend %f-normal;
 
+      display: block;
       margin-left: 32px;
       margin-right: 32px;
+      text-decoration: none;
       text-transform: uppercase;
       font-weight: 400;
       font-size: 21px;
