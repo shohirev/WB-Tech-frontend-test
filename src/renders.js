@@ -28,6 +28,7 @@ const renderLampInfo = (state) => {
   const currentLampImage = document.createElement('img');
   currentLampImage.setAttribute('src', activeItem.image);
   currentLampImage.setAttribute('alt', 'selected lamp image');
+  currentLampImage.classList.add('selected-lamp-image');
 
   const lampImageContainer = document.querySelector('.lamp-picture-container');
   const lampInRoomContainer = document.querySelector('.lamp-presentation-container');

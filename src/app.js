@@ -37,6 +37,7 @@ const app = async () => {
     const lampImage = document.createElement('img');
     lampImage.setAttribute('src', item.image);
     lampImage.setAttribute('alt', 'lamp image');
+    lampImage.classList.add('lamp-switcher-image');
     switcher.append(lampImage);
 
     switcher.onclick = () => {

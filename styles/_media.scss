@@ -48,8 +48,11 @@
       .introduction-text {
         width: 80%;
         margin: 80px auto 0;
-        font-size: 28px;
         text-align: justify;
+
+        p {
+          font-size: 28px;
+        }
       }
 
       .dividing-line {
@@ -60,7 +63,7 @@
         .specifications {
           margin-top: 80px;
 
-          p {
+          p span {
             font-size: 22px;
           }
         }
@@ -79,14 +82,14 @@
     margin-bottom: 0;
 
     nav {
-     display: none; 
+      display: none;
     }
 
     .burger-nav-toggle-label::before {
       display: block;
       width: 50px;
       height: 50px;
-      background: url('../images/burger-menu.svg') no-repeat;
+      background: url("../images/burger-menu.svg") no-repeat;
       background-size: contain;
       content: "";
     }
@@ -110,8 +113,6 @@
   }
 
   main {
-    min-width: 550px;
-
     .description-side {
       justify-content: space-between;
 
@@ -125,13 +126,21 @@
 
 @media (max-width: 550px) {
   main {
+    max-width: 100%;
+
     .description-side {
-      .introduction-text {
+      .introduction-text p {
         font-size: 16px;
       }
 
       .specification-container {
         flex-wrap: wrap;
+
+        .specifications {
+          p span {
+            font-size: 16px;
+          }
+        }
 
         .panel-wrapper {
           width: 100%;
@@ -140,35 +149,3 @@
     }
   }
 }
-
-
-/*.menu {
-        display: none;
-      }
-
-      .burger-menu {
-        display: block;
-
-        .burger-button {
-          position: fixed;
-          top: 20px;
-          right: 20px;
-        }
-
-        .menu {
-          position: fixed;
-          top: 60px;
-          right: 32px;
-          display: block;
-          visibility: hidden;
-
-          a {
-            display: block;
-          }
-        }
-
-        input[name="burger-menu-button"]:checked ~ .menu {
-          visibility: visible;
-          background: white;
-        }
-      }*/
