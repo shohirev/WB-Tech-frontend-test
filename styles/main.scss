@@ -1,6 +1,8 @@
 @import "reset";
 @import "fonts";
 @import "loader";
+@import "media";
+
 
 %flex-container {
   display: flex;
@@ -236,4 +238,3 @@ main {
   }
 }
 
-@import "media";
